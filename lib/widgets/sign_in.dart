@@ -23,24 +23,26 @@ class _SignInFormState extends State<SignInForm> {
   final emailTextController = TextEditingController();
   final passwordTextController = TextEditingController();
 
-  signInFunc() {
-    if(formKey.currentState.validate()) {
+  signInFunc() async {
+    if (formKey.currentState.validate()) {
       formKey.currentState.save();
       setState(() {
         isLoading = true;
       });
     }
-    authMethod
+    await authMethod
         .signInWithEmailAndPass(
             emailTextController.text, passwordTextController.text)
-        .then((value) {
-      print(value);
-      // Navigator.pushReplacement(
-      //     context,
-      //     MaterialPageRoute(
-      //       builder: (context) => ForumFeed(),
-      //     ));
-    });
+        .then(
+      (value) {
+        print(value);
+        // Navigator.pushReplacement(
+        //     context,
+        //     MaterialPageRoute(
+        //       builder: (context) => ForumFeed(),
+        //     ));
+      },
+    );
   }
 
   @override
@@ -61,10 +63,11 @@ class _SignInFormState extends State<SignInForm> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextFormField(
+                    controller: emailTextController,
                     validator: (value) {
                       return RegExp(
-                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                          .hasMatch(value)
+                                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                              .hasMatch(value)
                           ? null
                           : "Enter correct email.";
                     },
@@ -81,6 +84,7 @@ class _SignInFormState extends State<SignInForm> {
                     ),
                   ),
                   TextFormField(
+                    controller: passwordTextController,
                     validator: (value) {
                       return value.length < 6 ? "Enter correct password" : null;
                     },

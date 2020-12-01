@@ -53,7 +53,5 @@ class AuthMethods {
   }
 
   // Check isLoggedIn
-Future checkIsLoggedIn() {
-
-}
+  Future checkIsLoggedIn() {}
 }
