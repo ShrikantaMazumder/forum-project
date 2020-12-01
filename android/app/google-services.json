@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "911736464844",
+    "firebase_url": "https://flutter-forum-app-cdf21.firebaseio.com",
+    "project_id": "flutter-forum-app-cdf21",
+    "storage_bucket": "flutter-forum-app-cdf21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911736464844:android:81ce7e1e3332b498842969",
+        "android_client_info": {
+          "package_name": "com.example.forum_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911736464844-07eusu3r1deblharlmsa1rqpob07jhvl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAxCVve_Y6-Bw61MWQtIj0NTCdQNva_Hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911736464844-07eusu3r1deblharlmsa1rqpob07jhvl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
